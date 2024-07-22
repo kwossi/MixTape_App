@@ -6,8 +6,10 @@ import { BrowserRouter as Browser } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Browser>
-    <TapeProvider>
-      <App />
-    </TapeProvider>
+    <React.StrictMode>
+      <TapeProvider>
+        <App />
+      </TapeProvider>
+    </React.StrictMode>
   </Browser>
 );

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TapeContext } from "../store/TapeContext";
 
 const YoutubeSearch = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const searchYouTube = async () => {
@@ -12,6 +14,12 @@ const YoutubeSearch = () => {
     );
     const data = await response.json();
     setResults(data.items);
+  };
+
+  const addSong = (song) => {
+    mixtapeDispatch({ type: "ADD", payload: { song } });
+    console.log(song);
+    console.log(mixtapeState);
   };
 
   return (
@@ -32,13 +40,7 @@ const YoutubeSearch = () => {
               alt={item.snippet.title}
             />
             <p>{item.snippet.title}</p>
-            <a
-              href={`https://www.youtube.com/watch?v=${item.id.videoId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Watch
-            </a>
+            <button onClick={() => addSong(item)}>ADD</button>
           </div>
         ))}
       </div>

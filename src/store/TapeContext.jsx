@@ -1,14 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useReducer } from "react";
+import { mixtapeInitialState, mixtapeReducer } from "../reducers/reducer";
 
 export const TapeContext = createContext();
 
 export const TapeProvider = ({ children }) => {
-  const [mixtape, setMixtape] = useState({
-    name: "",
-    creator: "",
-    playlist: [],
-  });
-  const data = { mixtape, setMixtape };
+  const [mixtapeState, mixtapeDispatch] = useReducer(
+    mixtapeReducer,
+    mixtapeInitialState
+  );
+  const data = { mixtapeState, mixtapeDispatch };
 
   return <TapeContext.Provider value={data}>{children}</TapeContext.Provider>;
 };
