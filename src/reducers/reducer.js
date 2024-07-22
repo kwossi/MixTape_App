@@ -1,7 +1,10 @@
+import ImportMixtape from "../components/ImportMixtape";
+
 export const mixtapeInitialState = {
   name: "",
   creator: "",
   playlist: [],
+  isToggled: false,
 };
 
 export const mixtapeReducer = (state, action) => {
@@ -12,10 +15,13 @@ export const mixtapeReducer = (state, action) => {
         name: action.payload.name,
         creator: action.payload.creator,
       };
+    case "TOGGLE":
+      return { ...state, isToggled: !state.isToggled };
     case "ADD":
       if (state.playlist.length < 10) {
         return {
           ...state,
+          isToggled: true,
           playlist: [
             ...state.playlist,
             {
@@ -26,7 +32,10 @@ export const mixtapeReducer = (state, action) => {
             },
           ],
         };
-      } else return state;
+      } else {
+        window.alert("Max number of songs reached");
+        return state;
+      }
     case "DEL":
       return {
         ...state,
@@ -35,7 +44,19 @@ export const mixtapeReducer = (state, action) => {
         ),
       };
     case "EDIT":
-      return state;
+      const updatedPlaylist = state.playlist.map((song, index) =>
+        index === action.payload.index
+          ? { ...song, [action.payload.field]: action.payload.value }
+          : song
+      );
+      return {
+        ...state,
+        playlist: updatedPlaylist,
+      };
+    case "IMPORT":
+      return {
+        ...action.payload,
+      };
     default:
       return state;
   }

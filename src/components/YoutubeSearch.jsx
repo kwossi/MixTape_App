@@ -44,6 +44,11 @@ const YoutubeSearch = () => {
           </div>
         ))}
       </div>
+      {!mixtapeState.isToggled && (
+        <button onClick={() => mixtapeDispatch({ type: "TOGGLE" })}>
+          toggle
+        </button>
+      )}
     </div>
   );
 };
