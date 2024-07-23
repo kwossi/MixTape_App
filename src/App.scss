@@ -1,0 +1,141 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: end;
+}
+nav {
+  width: 50%;
+  margin: 1em;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+}
+
+.header-container {
+  background-color: red;
+}
+
+.logo {
+  float: left;
+}
+
+.create-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1em;
+}
+
+.content-container,
+.search-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: aquamarine;
+}
+
+.first-wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  max-width: 300px;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 1em auto;
+  background-color: bisque;
+  p {
+    margin: auto;
+  }
+  img {
+    max-height: 50px;
+  }
+}
+
+.player-container {
+  background-color: aquamarine;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1em;
+}
+
+.player-playlist {
+  list-style: none;
+}
+
+.playlist-item {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  .playlist-item-text {
+    text-align: left;
+    width: 100%;
+    padding: 0.5em;
+  }
+}
+
+.currently-playing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  width: 100%;
+  button {
+    flex-grow: 1;
+  }
+}
+
+.sidebar-container {
+  background-color: blue;
+  width: 30%;
+  max-width: 350px;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  .sidebar-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 10px;
+  }
+  input {
+    background-color: blue;
+    border: none;
+  }
+  img {
+    max-height: 4em;
+  }
+}
+
+.toggle-button {
+  position: relative;
+  right: 0;
+  z-index: 1000;
+}

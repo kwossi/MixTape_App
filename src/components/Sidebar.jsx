@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TapeContext } from "../store/TapeContext";
 import { useNavigate } from "react-router-dom";
 
@@ -14,24 +14,27 @@ const Sidebar = () => {
     <div>
       {mixtapeState.isToggled && (
         <div className="sidebar-container">
-          <button onClick={() => mixtapeDispatch({ type: "TOGGLE" })}>
-            toggle
-          </button>
           <h2>{mixtapeState.name}</h2>
           <p>{mixtapeState.creator}</p>
           {mixtapeState.playlist.length === 0 ? (
             <p>No songs added yet!</p>
           ) : (
             mixtapeState.playlist.map((song, index) => (
-              <div className="playlist-item" key={index}>
-                <div>
+              <div className="sidebar-item" key={index}>
+                <button
+                  name="artist"
+                  onClick={() =>
+                    mixtapeDispatch({ type: "DEL", payload: { song, index } })
+                  }
+                >
+                  delete
+                </button>
+                <div className="sidebar-inputs">
                   <input
                     type="text"
                     value={song.title}
                     onChange={(e) => handleEdit(index, "title", e.target.value)}
                   />
-                </div>
-                <div>
                   <input
                     type="text"
                     value={song.artist}
@@ -41,19 +44,14 @@ const Sidebar = () => {
                   />
                 </div>
                 <img src={song.thumbnail} />
-                <button
-                  name="artist"
-                  onClick={() =>
-                    mixtapeDispatch({ type: "DEL", payload: { song, index } })
-                  }
-                >
-                  delete
-                </button>
               </div>
             ))
           )}
           <button onClick={() => navigate("/listen")}>Play</button>
           <button onClick={() => navigate("/share")}>Share</button>
+          <button onClick={() => mixtapeDispatch({ type: "DELALL" })}>
+            Delete all
+          </button>
         </div>
       )}
     </div>

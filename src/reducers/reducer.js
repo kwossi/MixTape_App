@@ -57,6 +57,11 @@ export const mixtapeReducer = (state, action) => {
       return {
         ...action.payload,
       };
+
+    case "DELALL":
+      return mixtapeInitialState;
+    case "HIDE":
+      return { ...state, isToggled: false };
     default:
       return state;
   }

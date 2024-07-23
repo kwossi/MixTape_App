@@ -23,18 +23,18 @@ const YoutubeSearch = () => {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <h1>YouTube Search</h1>
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search for videos"
+        placeholder="Search for songs"
       />
       <button onClick={searchYouTube}>Search</button>
-      <div id="results">
+      <div id="results-container">
         {results.map((item) => (
-          <div key={item.id.videoId}>
+          <div className="result" key={item.id.videoId}>
             <img
               src={item.snippet.thumbnails.default.url}
               alt={item.snippet.title}
@@ -44,11 +44,6 @@ const YoutubeSearch = () => {
           </div>
         ))}
       </div>
-      {!mixtapeState.isToggled && (
-        <button onClick={() => mixtapeDispatch({ type: "TOGGLE" })}>
-          toggle
-        </button>
-      )}
     </div>
   );
 };

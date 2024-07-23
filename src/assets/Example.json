@@ -1,0 +1,37 @@
+{
+  "name": "Example",
+  "creator": "KroKro",
+  "playlist": [
+    {
+      "title": "When the Rain Begins to Fall",
+      "artist": "Jermaine Jackson",
+      "url": "https://www.youtube.com/watch?v=aahViYznVTQ",
+      "thumbnail": "https://i.ytimg.com/vi/aahViYznVTQ/default.jpg"
+    },
+    {
+      "title": "I'm Still Standing",
+      "artist": "Elton John",
+      "url": "https://www.youtube.com/watch?v=ZHwVBirqD2s",
+      "thumbnail": "https://i.ytimg.com/vi/ZHwVBirqD2s/default.jpg"
+    },
+    {
+      "title": "Remember Me",
+      "artist": "Blue Boy",
+      "url": "https://www.youtube.com/watch?v=fKKNPLowteY",
+      "thumbnail": "https://i.ytimg.com/vi/fKKNPLowteY/default.jpg"
+    },
+    {
+      "title": "Teardrops",
+      "artist": "Womack And Womack",
+      "url": "https://www.youtube.com/watch?v=R8AOAap6_k4",
+      "thumbnail": "https://i.ytimg.com/vi/R8AOAap6_k4/default.jpg"
+    },
+    {
+      "title": "Babooshka",
+      "artist": "Kate Bush",
+      "url": "https://www.youtube.com/watch?v=6xckBwPdo1c",
+      "thumbnail": "https://i.ytimg.com/vi/6xckBwPdo1c/default.jpg"
+    }
+  ],
+  "isToggled": true
+}

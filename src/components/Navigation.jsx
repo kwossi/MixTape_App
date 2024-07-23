@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <div>
+    <div className="nav-container">
       <nav>
         <ul>
           <li>
@@ -17,7 +17,6 @@ const Navigation = () => {
           </li>
         </ul>
       </nav>
-      <Outlet />
     </div>
   );
 };

@@ -2,16 +2,19 @@ import React, { useContext } from "react";
 import CreateFirst from "./CreateFirst";
 import { TapeContext } from "../store/TapeContext";
 import YoutubeSearch from "./YoutubeSearch";
-import Sidebar from "./Sidebar";
 import ImportMixtape from "./ImportMixtape";
 
 const Create = () => {
-  const { mixtapeState } = useContext(TapeContext);
+  const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
   return (
     <div className="create-container">
-      <h1>Create your playlist </h1>
-      <p>Or import a mixtape</p>
-      <ImportMixtape />
+      <h1>Create your mixtape </h1>
+      <button
+        className="toggle-button"
+        onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
+      >
+        {mixtapeState.isToggled ? "Hide Mixtape" : "Show Mixtape"}
+      </button>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quos
         natus et repudiandae accusamus dolores.
@@ -19,9 +22,13 @@ const Create = () => {
       {mixtapeState.name && mixtapeState.creator ? (
         <YoutubeSearch />
       ) : (
-        <CreateFirst />
+        <>
+          <h3>Create your own</h3>
+          <CreateFirst />
+          <h3>Or import a mixtape</h3>
+          <ImportMixtape />
+        </>
       )}
-      <Sidebar />
     </div>
   );
 };

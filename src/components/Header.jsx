@@ -1,12 +1,16 @@
 import React from "react";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <div>
+    <div className="header-container">
       <div>Header</div>
       <div>
-        <a href="/">home</a>{" "}
+        <a className="logo" href="/">
+          home
+        </a>{" "}
       </div>
+      <Navigation />
     </div>
   );
 };
