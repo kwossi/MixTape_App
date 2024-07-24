@@ -20,7 +20,7 @@ const ExportMixtape = () => {
   return (
     <div>
       <button onClick={exportMixtape}>Export Mixtape</button>
-      <ul>
+      <ul className="export-list">
         {mixtapeState.playlist.map((song, index) => (
           <li key={index}>{song.title}</li>
         ))}

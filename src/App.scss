@@ -1,9 +1,85 @@
+//  ****************************    COLORS
+$bg-primary: #2c3e50;
+
+$hl1-primary: hsl(16, 100%, 66%);
+$hl1-dark: #b23e15;
+$hl1-light: #ffa37e;
+
+$hl2-primary: #8ddad2;
+
+$image-layer: #4a7c7c;
+
+$border1: "1px solid $hl1⁻primary";
+
+//  ********************************    FONTS
+
+.righteous-regular {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+//  *************************   ROOT AND VIEWS
+
 #root {
+  font-family: "Rubik Mono One";
+}
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
 }
+
+.app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  color: $hl2-primary;
+  overflow: auto;
+}
+
+.view-create {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.view- {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}
+
+.view-listen {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}
+
+.view-share {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}
+
+//  ******************  HEADER
 
 .nav-container {
   display: flex;
@@ -11,35 +87,58 @@
 }
 nav {
   width: 50%;
-  margin: 1em;
   ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
+    li {
+      color: $hl1-light;
+      .active {
+        color: $hl1-dark;
+        background-color: $bg-primary;
+        border: $hl1-light;
+      }
+    }
   }
 }
 
 .header-container {
-  background-color: red;
+  background-color: $bg-primary;
+  min-height: 100px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  border-bottom: 3px solid $hl1-primary;
 }
 
 .logo {
   float: left;
 }
 
-.create-container {
+.wrapper {
+  padding: 2em;
+}
+
+// ************************* content
+
+.create-container,
+.search-container {
+  background-color: $bg-primary;
   width: 80%;
   max-width: 1000px;
   margin: auto;
   padding: 1em;
+  overflow: auto;
 }
 
-.content-container,
-.search-container {
+.content-container {
   width: 80%;
   max-width: 1000px;
   margin: auto;
-  background-color: aquamarine;
+  background-color: $bg-primary;
+  overflow: auto;
+  border: 3px solid $hl1-primary;
+  border-radius: 8px;
 }
 
 .first-wrapper {
@@ -57,7 +156,7 @@ nav {
   justify-content: space-between;
   padding: 1em;
   margin: 1em auto;
-  background-color: bisque;
+  background-color: $hl1-primary;
   p {
     margin: auto;
   }
@@ -66,11 +165,67 @@ nav {
   }
 }
 
+.export-list {
+  list-style: none;
+}
+
+//  ************************ SIDEBAR
+
+.sidebar-container {
+  background-color: $bg-primary;
+  border-left: 3px solid $hl1-primary;
+  width: 30%;
+  max-width: 350px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  overflow-x: scroll;
+  z-index: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  .sidebar-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 10px;
+  }
+  input {
+    background-color: $bg-primary;
+    border: none;
+  }
+  img {
+    max-height: 4em;
+  }
+}
+
+.toggle-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.toggle-out-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  // transform: translateX(-20%);
+}
+
+// .container {
+//   overflow: auto;
+//   height: 100%;
+// }
+
+// *********************** PLAYER
+
 .player-container {
-  background-color: aquamarine;
+  background-color: $bg-primary;
   max-width: 1000px;
   margin: auto;
   padding: 1em;
+  overflow-y: auto;
 }
 
 .player-playlist {
@@ -102,40 +257,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   flex-grow: 1;
-  width: 100%;
   button {
     flex-grow: 1;
   }
-}
-
-.sidebar-container {
-  background-color: blue;
-  width: 30%;
-  max-width: 350px;
-  height: 100vh;
-  position: absolute;
-  right: 0;
-}
-
-.sidebar-item {
-  display: flex;
-  .sidebar-inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 10px;
-  }
-  input {
-    background-color: blue;
-    border: none;
-  }
-  img {
-    max-height: 4em;
-  }
-}
-
-.toggle-button {
-  position: relative;
-  right: 0;
-  z-index: 1000;
 }

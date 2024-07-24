@@ -9,12 +9,13 @@ const Layout = () => {
       <div className="layout">
         <Header />
       </div>
-
       <div>
         <Sidebar />
       </div>
-      <div className="content-container">
-        <Outlet />
+      <div className="wrapper">
+        <div className="content-container">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

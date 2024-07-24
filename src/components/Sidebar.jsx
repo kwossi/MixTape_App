@@ -52,6 +52,12 @@ const Sidebar = () => {
           <button onClick={() => mixtapeDispatch({ type: "DELALL" })}>
             Delete all
           </button>
+          <button
+            className="toggle-out-button"
+            onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
+          >
+            {mixtapeState.isToggled ? "Hide Mixtape" : "Show Mixtape"}
+          </button>
         </div>
       )}
     </div>

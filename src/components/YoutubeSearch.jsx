@@ -18,8 +18,6 @@ const YoutubeSearch = () => {
 
   const addSong = (song) => {
     mixtapeDispatch({ type: "ADD", payload: { song } });
-    console.log(song);
-    console.log(mixtapeState);
   };
 
   return (

@@ -3,7 +3,7 @@ import ExportMixtape from "./ExportMixtape";
 
 const Share = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Share</h1>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta,

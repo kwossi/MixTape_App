@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 const Header = () => {
   return (
     <div className="header-container">
-      <div>Header</div>
+      <div>MIXTAPEEEES</div>
       <div>
         <a className="logo" href="/">
           home

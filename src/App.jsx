@@ -2,13 +2,14 @@ import "./App.scss";
 import Create from "./components/Create";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Listen from "./components/Listen";
 import Share from "./components/Share";
 
 function App() {
+  let location = useLocation();
   return (
-    <div>
+    <div className={`app view-${location.pathname.substring(1)}`}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
