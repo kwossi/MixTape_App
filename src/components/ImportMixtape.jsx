@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { TapeContext } from "../store/TapeContext";
+import { FaCloudUploadAlt } from "react-icons/fa";
 
 const ImportMixtape = () => {
   const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
@@ -34,7 +35,9 @@ const ImportMixtape = () => {
   return (
     <div>
       <input type="file" accept=".json" onChange={changeFile} />
-      <button onClick={handleImport}>Import</button>
+      <button onClick={handleImport}>
+        <FaCloudUploadAlt />
+      </button>
     </div>
   );
 };

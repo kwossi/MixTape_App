@@ -1,11 +1,13 @@
 //  ****************************    COLORS
 $bg-primary: #2c3e50;
+$bg-light: #495e72;
 
 $hl1-primary: hsl(16, 100%, 66%);
 $hl1-dark: #b23e15;
 $hl1-light: #ffa37e;
 
-$hl2-primary: #8ddad2;
+$hl2-primary: #bad8d5;
+$hl2-dark: #76a8a3;
 
 $image-layer: #4a7c7c;
 
@@ -31,6 +33,12 @@ $border1: "1px solid $hl1⁻primary";
   font-family: "Rubik Mono One";
 }
 
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $hl2-primary;
+  font-size: 1.2em;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -52,6 +60,12 @@ body {
   overflow: auto;
 }
 
+.view- {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}
+
 .view-create {
   background-color: $image-layer;
   background-image: url("../src/assets/bg-amps-books-tapes.jpg");
@@ -59,12 +73,6 @@ body {
 
   display: flex;
   flex-direction: column;
-}
-
-.view- {
-  background-color: $image-layer;
-  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
-  background-blend-mode: difference;
 }
 
 .view-listen {
@@ -81,27 +89,6 @@ body {
 
 //  ******************  HEADER
 
-.nav-container {
-  display: flex;
-  justify-content: end;
-}
-nav {
-  width: 50%;
-  ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    li {
-      color: $hl1-light;
-      .active {
-        color: $hl1-dark;
-        background-color: $bg-primary;
-        border: $hl1-light;
-      }
-    }
-  }
-}
-
 .header-container {
   background-color: $bg-primary;
   min-height: 100px;
@@ -109,6 +96,46 @@ nav {
   top: 0;
   width: 100%;
   border-bottom: 3px solid $hl1-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: end;
+}
+nav {
+  width: 40%;
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    align-items: flex-end;
+    list-style: none;
+    li {
+      a {
+        display: block;
+        color: $hl1-light;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-left: 3em;
+      }
+    }
+  }
+}
+
+nav ul li a.active {
+  margin-top: 0.7em;
+}
+
+.link-box {
+  border: 3px solid $hl1-primary;
+  border-bottom: none;
+  padding: 1em 1em 0 1em;
+  border-radius: 20px 20px 0 0;
 }
 
 .logo {
@@ -120,6 +147,14 @@ nav {
 }
 
 // ************************* content
+
+.home-container {
+  padding: 0 2em;
+  p {
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
 
 .create-container,
 .search-container {
@@ -157,8 +192,11 @@ nav {
   padding: 1em;
   margin: 1em auto;
   background-color: $hl1-primary;
+  border-radius: 8px;
   p {
     margin: auto;
+    font-size: 1.2em;
+    color: $bg-light;
   }
   img {
     max-height: 50px;
@@ -171,6 +209,14 @@ nav {
 
 //  ************************ SIDEBAR
 
+.sidebar-wrapper {
+  width: 30%;
+  max-width: 350px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+}
+
 .sidebar-container {
   background-color: $bg-primary;
   border-left: 3px solid $hl1-primary;
@@ -179,7 +225,7 @@ nav {
   height: 100%;
   position: fixed;
   right: 0;
-  overflow-x: scroll;
+  overflow: auto;
   z-index: 1;
 }
 
@@ -189,34 +235,26 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 0 10px;
+    margin: 0 5px;
   }
   input {
     background-color: $bg-primary;
     border: none;
+    font-size: 1em;
+    font-family: "Righteous";
+    color: $hl2-primary;
   }
   img {
     max-height: 4em;
   }
 }
 
-.toggle-button {
-  position: absolute;
-  right: 0;
-  top: 50%;
+.sidebar-footer {
+  width: 50%;
+  margin: 2em auto;
+  display: flex;
+  justify-content: space-around;
 }
-
-.toggle-out-button {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  // transform: translateX(-20%);
-}
-
-// .container {
-//   overflow: auto;
-//   height: 100%;
-// }
 
 // *********************** PLAYER
 
@@ -255,9 +293,104 @@ nav {
 
 .controls {
   display: flex;
+  margin: 0.5em auto;
   justify-content: space-evenly;
   flex-grow: 1;
   button {
     flex-grow: 1;
   }
+}
+
+//  ******************************** Speakers
+
+.speaker {
+  border: 2px solid $hl1-primary;
+  border-radius: 8px;
+  padding: 1.5em;
+  overflow: hidden;
+}
+
+.speaker-inside {
+  height: 8em;
+  min-width: 8em;
+  background-color: $hl1-light;
+  border-radius: 50%;
+  position: relative;
+}
+
+.speaker-inside-active {
+  height: 8em;
+  min-width: 8em;
+  background-color: $hl1-light;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 0.8s infinite ease-in;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.45);
+  }
+}
+
+//  ******************************** BUTTONS
+
+.control-button {
+  font-size: 2em;
+  background-color: $bg-light;
+  border: none;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 8px;
+  color: $hl1-primary;
+  :hover {
+    color: $hl1-light;
+  }
+}
+
+.add-button {
+  font-size: 2em;
+  background-color: $hl1-primary;
+  color: $bg-primary;
+  border: none;
+  :hover {
+    color: $bg-light;
+  }
+}
+
+.sidebar-button,
+.playlist-button {
+  font-size: 2em;
+  background-color: $bg-primary;
+  color: $hl1-primary;
+  border: none;
+  :hover {
+    color: $hl1-light;
+  }
+}
+
+.toggle-button,
+.toggle-out-button {
+  font-size: 2em;
+  background-color: $bg-primary;
+  color: $hl1-primary;
+  border: 3px solid $hl1-primary;
+  border-radius: 8px;
+}
+
+.toggle-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.toggle-out-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateX(-100%);
 }

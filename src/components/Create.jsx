@@ -3,18 +3,21 @@ import CreateFirst from "./CreateFirst";
 import { TapeContext } from "../store/TapeContext";
 import YoutubeSearch from "./YoutubeSearch";
 import ImportMixtape from "./ImportMixtape";
+import { FaAnglesLeft } from "react-icons/fa6";
 
 const Create = () => {
   const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
   return (
     <div className="create-container">
       <h1>Create your mixtape </h1>
-      <button
-        className="toggle-button"
-        onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
-      >
-        {mixtapeState.isToggled ? "Hide Mixtape" : "Show Mixtape"}
-      </button>
+      {!mixtapeState.isToggled && (
+        <button
+          className="toggle-button"
+          onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
+        >
+          <FaAnglesLeft />
+        </button>
+      )}
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quos
         natus et repudiandae accusamus dolores.

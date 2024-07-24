@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import { TapeContext } from "../store/TapeContext";
 import { useNavigate } from "react-router-dom";
+import { FaPlay } from "react-icons/fa";
+import { FaAnglesRight, FaShareNodes } from "react-icons/fa6";
+import { TiDelete } from "react-icons/ti";
+import { MdDelete } from "react-icons/md";
 
 const Sidebar = () => {
   const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
@@ -11,7 +15,15 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="sidebar-wrapper">
+      {mixtapeState.isToggled && (
+        <button
+          className="toggle-out-button"
+          onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
+        >
+          <FaAnglesRight />
+        </button>
+      )}
       {mixtapeState.isToggled && (
         <div className="sidebar-container">
           <h2>{mixtapeState.name}</h2>
@@ -22,12 +34,13 @@ const Sidebar = () => {
             mixtapeState.playlist.map((song, index) => (
               <div className="sidebar-item" key={index}>
                 <button
+                  className="sidebar-button"
                   name="artist"
                   onClick={() =>
                     mixtapeDispatch({ type: "DEL", payload: { song, index } })
                   }
                 >
-                  delete
+                  <TiDelete />
                 </button>
                 <div className="sidebar-inputs">
                   <input
@@ -47,17 +60,26 @@ const Sidebar = () => {
               </div>
             ))
           )}
-          <button onClick={() => navigate("/listen")}>Play</button>
-          <button onClick={() => navigate("/share")}>Share</button>
-          <button onClick={() => mixtapeDispatch({ type: "DELALL" })}>
-            Delete all
-          </button>
-          <button
-            className="toggle-out-button"
-            onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
-          >
-            {mixtapeState.isToggled ? "Hide Mixtape" : "Show Mixtape"}
-          </button>
+          <div className="sidebar-footer">
+            <button
+              className="sidebar-button"
+              onClick={() => navigate("/listen")}
+            >
+              <FaPlay />
+            </button>
+            <button
+              className="sidebar-button"
+              onClick={() => navigate("/share")}
+            >
+              <FaShareNodes />
+            </button>
+            <button
+              className="sidebar-button"
+              onClick={() => mixtapeDispatch({ type: "DELALL" })}
+            >
+              <MdDelete />
+            </button>
+          </div>
         </div>
       )}
     </div>

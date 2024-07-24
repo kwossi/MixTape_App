@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import { TapeContext } from "../store/TapeContext";
 import Example from "../assets/Example.json";
+import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa6";
 
 const Player = () => {
   const [playlist, setPlaylist] = useState(Example);
@@ -55,24 +56,50 @@ const Player = () => {
         onEnded={handleNext}
       />
       <div className="currently-playing">
-        <img style={{ border: "1px solid black" }} src="" alt="" />
+        <div className="speaker">
+          {isPlaying ? (
+            <div className="speaker-inside-active"></div>
+          ) : (
+            <div className="speaker-inside"></div>
+          )}
+        </div>
         <div className="noneyet">
           <p>{playlist.playlist[currentSong]?.title}</p>
           <p>{playlist.playlist[currentSong]?.artist}</p>
         </div>
-        <img src={playlist.playlist[currentSong]?.thumbnail} alt="" />
+        <div className="speaker">
+          {isPlaying ? (
+            <div className="speaker-inside-active"></div>
+          ) : (
+            <div className="speaker-inside"></div>
+          )}
+        </div>
+        {/* <img src={playlist.playlist[currentSong]?.thumbnail} alt="" /> */}
       </div>
       <div className="controls">
-        <button onClick={handlePlay}>play</button>
-        <button onClick={handlePause}>pause</button>
-        <button onClick={handleNext}>next</button>
-        <button onClick={handlePrevious}>previous</button>
+        <button className="control-button" onClick={handlePlay}>
+          <FaPlay />
+        </button>
+        <button className="control-button" onClick={handlePause}>
+          <FaPause />
+        </button>
+        <button className="control-button" onClick={handlePrevious}>
+          <FaBackward />
+        </button>
+        <button className="control-button" onClick={handleNext}>
+          <FaForward />
+        </button>
       </div>
       <ul className="player-playlist">
         {playlist.playlist.map((song, index) => (
           <li key={index}>
             <div className="playlist-item">
-              <button onClick={() => jumpPlay(index)}>play</button>
+              <button
+                className="playlist-button"
+                onClick={() => jumpPlay(index)}
+              >
+                <FaPlay />
+              </button>
               <div className="playlist-item-text">
                 <p>{song.title}</p>
                 <p>{song.artist}</p>

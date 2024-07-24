@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { TapeContext } from "../store/TapeContext";
+import { MdAddBox } from "react-icons/md";
 
 const YoutubeSearch = () => {
   const [query, setQuery] = useState("");
@@ -22,7 +23,7 @@ const YoutubeSearch = () => {
 
   return (
     <div className="search-container">
-      <h1>YouTube Search</h1>
+      <h2>Search YouTube for songs... </h2>
       <input
         type="text"
         value={query}
@@ -38,7 +39,9 @@ const YoutubeSearch = () => {
               alt={item.snippet.title}
             />
             <p>{item.snippet.title}</p>
-            <button onClick={() => addSong(item)}>ADD</button>
+            <button className="add-button" onClick={() => addSong(item)}>
+              <MdAddBox />
+            </button>
           </div>
         ))}
       </div>

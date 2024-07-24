@@ -7,19 +7,19 @@ const Navigation = () => {
       <nav>
         <ul>
           <li>
-            <NavLink activeClassName="active" to="create">
-              Create
-            </NavLink>
+            <div className="link-box">
+              <NavLink to="create">Create</NavLink>
+            </div>
           </li>
           <li>
-            <NavLink activeClassName="active" to="listen">
-              Listen
-            </NavLink>
+            <div className="link-box">
+              <NavLink to="listen">Listen</NavLink>
+            </div>
           </li>
           <li>
-            <NavLink activeClassName="active" to="share">
-              Share
-            </NavLink>
+            <div className="link-box">
+              <NavLink to="share">Share</NavLink>
+            </div>
           </li>
         </ul>
       </nav>

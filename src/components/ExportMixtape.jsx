@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { TapeContext } from "../store/TapeContext";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 
 const ExportMixtape = () => {
   const { mixtapeState } = useContext(TapeContext);
@@ -19,7 +20,9 @@ const ExportMixtape = () => {
 
   return (
     <div>
-      <button onClick={exportMixtape}>Export Mixtape</button>
+      <button className="" onClick={exportMixtape}>
+        <FaCloudDownloadAlt />
+      </button>
       <ul className="export-list">
         {mixtapeState.playlist.map((song, index) => (
           <li key={index}>{song.title}</li>
