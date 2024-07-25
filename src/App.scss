@@ -208,6 +208,7 @@ nav ul li a.active {
   overflow: auto;
   border: 3px solid $hl1-primary;
   border-radius: 8px;
+  // box-shadow: inset 0 0 10px $hl1-light;
 }
 
 .first-wrapper {
@@ -449,7 +450,8 @@ img {
   background-color: $bg-primary;
   color: $hl1-primary;
   border: 3px solid $hl1-primary;
-  border-radius: 8px;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
 }
 
 .toggle-button {
@@ -482,4 +484,7 @@ img {
   border: none;
   border-radius: 5px;
   font-size: 1.2em;
+  :hover {
+    background-color: $hl1-light;
+  }
 }
