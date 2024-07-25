@@ -1,12 +1,14 @@
 //  ****************************    COLORS
-$bg-primary: #2c3e50;
+// $bg-primary: #2c3e50;
 $bg-light: #495e72;
+$bg-primary: rgba(44, 62, 80, 0.85);
 
 $hl1-primary: hsl(16, 100%, 66%);
 $hl1-dark: #b23e15;
 $hl1-light: #ffa37e;
 
 $hl2-primary: #bad8d5;
+$hl2-medium: #93b9b6;
 $hl2-dark: #76a8a3;
 
 $image-layer: #4a7c7c;
@@ -27,16 +29,32 @@ $border1: "1px solid $hl1⁻primary";
   font-style: normal;
 }
 
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 //  *************************   ROOT AND VIEWS
 
 #root {
   font-family: "Rubik Mono One";
+  box-sizing: border-box;
 }
 
 p {
-  font-family: Arial, Helvetica, sans-serif;
-  color: $hl2-primary;
-  font-size: 1.2em;
+  font-family: "Ubuntu";
+  font-weight: 300;
+  color: $hl2-medium;
+  font-size: 1.5em;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.artist {
+  font-style: italic;
 }
 
 body {
@@ -97,16 +115,24 @@ body {
   width: 100%;
   border-bottom: 3px solid $hl1-primary;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: end;
+  h1 {
+    color: $hl1-primary;
+    font-size: 4.5em;
+    margin: 0 8em 0 0.5em;
+    font-family: "Monoton";
+  }
 }
 
 .nav-container {
   display: flex;
   justify-content: end;
+  width: 50%;
 }
 nav {
-  width: 40%;
+  width: 80%;
 
   ul {
     display: flex;
@@ -128,7 +154,7 @@ nav {
 }
 
 nav ul li a.active {
-  margin-top: 0.7em;
+  margin-top: 0.8em;
 }
 
 .link-box {
@@ -139,31 +165,39 @@ nav ul li a.active {
 }
 
 .logo {
-  float: left;
+  color: $hl1-light;
+  font-size: 5em;
+  margin-bottom: 17px;
+  padding: 0;
+  display: flex;
 }
 
 .wrapper {
-  padding: 2em;
+  padding: 5%;
 }
 
 // ************************* content
 
 .home-container {
   padding: 0 2em;
-  p {
-    font-size: 1.5em;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 2em;
+  h2 {
+    font-size: 2em;
   }
 }
 
 .create-container,
 .search-container {
-  background-color: $bg-primary;
   width: 80%;
   max-width: 1000px;
   margin: auto;
   padding: 1em;
   overflow: auto;
+}
+
+.create-options {
+  display: flex;
+  justify-content: space-around;
 }
 
 .content-container {
@@ -182,8 +216,22 @@ nav ul li a.active {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 1.5em;
   width: 20%;
   max-width: 300px;
+  input {
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+}
+
+.import-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
 }
 
 .result {
@@ -259,7 +307,6 @@ nav ul li a.active {
 // *********************** PLAYER
 
 .player-container {
-  background-color: $bg-primary;
   max-width: 1000px;
   margin: auto;
   padding: 1em;
@@ -275,15 +322,18 @@ nav ul li a.active {
   display: flex;
   justify-content: space-between;
   width: 85%;
-  button {
-    background-color: transparent;
-    border: none;
-  }
+
   .playlist-item-text {
     text-align: left;
     width: 100%;
-    padding: 0.5em;
   }
+}
+
+img {
+  max-width: auto;
+  max-height: 100%;
+  position: relative;
+  top: 15%;
 }
 
 .currently-playing {
@@ -294,7 +344,7 @@ nav ul li a.active {
 .controls {
   display: flex;
   margin: 0.5em auto;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-grow: 1;
   button {
     flex-grow: 1;
@@ -363,7 +413,8 @@ nav ul li a.active {
 }
 
 .sidebar-button,
-.playlist-button {
+.playlist-button,
+.import-button {
   font-size: 2em;
   background-color: $bg-primary;
   color: $hl1-primary;
@@ -371,6 +422,25 @@ nav ul li a.active {
   :hover {
     color: $hl1-light;
   }
+}
+
+.import-button {
+  display: inline-block;
+  color: $bg-primary;
+  flex-shrink: 1;
+  max-width: 50px;
+}
+
+.browse {
+  color: $bg-primary;
+  background-color: $hl1-primary;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.playlist-button {
+  margin-right: 1em;
 }
 
 .toggle-button,
@@ -393,4 +463,23 @@ nav ul li a.active {
   left: 0;
   top: 50%;
   transform: translateX(-100%);
+}
+
+.download-button,
+.import-button {
+  font-size: 5em;
+  background-color: $bg-primary;
+  color: $hl1-primary;
+  border: none;
+  :hover {
+    color: $hl1-light;
+  }
+}
+
+.continue-button {
+  color: $bg-primary;
+  background-color: $hl1-primary;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
 }

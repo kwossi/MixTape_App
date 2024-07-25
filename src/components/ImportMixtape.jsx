@@ -33,9 +33,14 @@ const ImportMixtape = () => {
   };
 
   return (
-    <div>
-      <input type="file" accept=".json" onChange={changeFile} />
-      <button onClick={handleImport}>
+    <div className="import-container">
+      <input
+        className="browse"
+        type="file"
+        accept=".json"
+        onChange={changeFile}
+      />
+      <button className="import-button" onClick={handleImport}>
         <FaCloudUploadAlt />
       </button>
     </div>

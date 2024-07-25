@@ -30,11 +30,13 @@ const CreateFirst = () => {
       <input
         type="text"
         name="creator"
-        placeholder="creator"
+        placeholder="Creator"
         onChange={handleChange}
         required
       />
-      <button onClick={handleNext}>continue</button>
+      <button className="continue-button" onClick={handleNext}>
+        Continue
+      </button>
     </div>
   );
 };

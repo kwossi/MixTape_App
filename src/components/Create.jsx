@@ -18,19 +18,20 @@ const Create = () => {
           <FaAnglesLeft />
         </button>
       )}
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quos
-        natus et repudiandae accusamus dolores.
-      </p>
+
       {mixtapeState.name && mixtapeState.creator ? (
         <YoutubeSearch />
       ) : (
-        <>
-          <h3>Create your own</h3>
-          <CreateFirst />
-          <h3>Or import a mixtape</h3>
-          <ImportMixtape />
-        </>
+        <div className="create-options">
+          <div>
+            <h2>Fresh start</h2>
+            <CreateFirst />
+          </div>
+          <div>
+            <h2>Or import</h2>
+            <ImportMixtape />
+          </div>
+        </div>
       )}
     </div>
   );

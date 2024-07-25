@@ -14,8 +14,8 @@ const Listen = () => {
 
   return (
     <div className="container">
-      <h1>Listen</h1>
-      <p>Listen to your mixtape now.</p>
+      {/* <h1>Listen</h1>
+      <p>Listen to your mixtape now.</p> */}
       <Player />
     </div>
   );

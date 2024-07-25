@@ -20,14 +20,17 @@ const ExportMixtape = () => {
 
   return (
     <div>
-      <button className="" onClick={exportMixtape}>
+      <button className="download-button" onClick={exportMixtape}>
         <FaCloudDownloadAlt />
       </button>
-      <ul className="export-list">
-        {mixtapeState.playlist.map((song, index) => (
-          <li key={index}>{song.title}</li>
-        ))}
-      </ul>
+      {mixtapeState.name ? (
+        <div>
+          <h3>{mixtapeState.name}</h3>
+          <p>by: {mixtapeState.creator}</p>
+        </div>
+      ) : (
+        <p>No mixtape yet.</p>
+      )}
     </div>
   );
 };

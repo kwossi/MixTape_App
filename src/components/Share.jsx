@@ -4,10 +4,10 @@ import ExportMixtape from "./ExportMixtape";
 const Share = () => {
   return (
     <div className="container">
-      <h1>Share</h1>
+      <h1>Ready to spread the love?</h1>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta,
-        quaerat delectus. Ipsum sint minus amet et ullam vitae ipsa. Odit?
+        Hit the download button and get your mix to hand it out to friends and
+        loved ones. Or just keep it for yourself.{" "}
       </p>
       <ExportMixtape />
     </div>

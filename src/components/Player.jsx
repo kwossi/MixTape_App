@@ -64,8 +64,8 @@ const Player = () => {
           )}
         </div>
         <div className="noneyet">
-          <p>{playlist.playlist[currentSong]?.title}</p>
-          <p>{playlist.playlist[currentSong]?.artist}</p>
+          <p className="title">{playlist.playlist[currentSong]?.title}</p>
+          <p className="artist">{playlist.playlist[currentSong]?.artist}</p>
         </div>
         <div className="speaker">
           {isPlaying ? (
@@ -74,7 +74,6 @@ const Player = () => {
             <div className="speaker-inside"></div>
           )}
         </div>
-        {/* <img src={playlist.playlist[currentSong]?.thumbnail} alt="" /> */}
       </div>
       <div className="controls">
         <button className="control-button" onClick={handlePlay}>
@@ -101,10 +100,12 @@ const Player = () => {
                 <FaPlay />
               </button>
               <div className="playlist-item-text">
-                <p>{song.title}</p>
-                <p>{song.artist}</p>
+                <p className="title">{song.title}</p>
+                <p className="artist">{song.artist}</p>
               </div>
-              <img src={song.thumbnail} alt="" />
+              <div className="playlist-thumbnail">
+                <img src={song.thumbnail} alt="" />
+              </div>
             </div>
           </li>
         ))}
