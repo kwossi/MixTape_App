@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { TapeContext } from "../store/TapeContext";
 
 const Listen = () => {
-  const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
+  const { mixtapeDispatch } = useContext(TapeContext);
   let location = useLocation();
   useEffect(() => {
     if (location.pathname === "/listen") {

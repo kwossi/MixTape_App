@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import ExportMixtape from "./ExportMixtape";
+import { useLocation } from "react-router-dom";
+import { TapeContext } from "../store/TapeContext";
 
 const Share = () => {
+  const { mixtapeDispatch } = useContext(TapeContext);
+  let location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/share") {
+      mixtapeDispatch({ type: "HIDE" });
+    }
+  }, [location]);
   return (
     <div className="container">
       <h1>Ready to spread the love?</h1>

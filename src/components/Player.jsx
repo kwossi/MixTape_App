@@ -92,7 +92,13 @@ const Player = () => {
       <ul className="player-playlist">
         {playlist.playlist.map((song, index) => (
           <li key={index}>
-            <div className="playlist-item">
+            <div
+              className={
+                index === currentSong
+                  ? "playlist-item playing"
+                  : "playlist-item"
+              }
+            >
               <button
                 className="playlist-button"
                 onClick={() => jumpPlay(index)}

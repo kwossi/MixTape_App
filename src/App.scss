@@ -109,8 +109,9 @@ body {
 
 .header-container {
   background-color: $bg-primary;
-  min-height: 100px;
-  position: sticky;
+  height: 120px;
+  position: fixed;
+  z-index: 1;
   top: 0;
   width: 100%;
   border-bottom: 3px solid $hl1-primary;
@@ -174,6 +175,7 @@ nav ul li a.active {
 
 .wrapper {
   padding: 5%;
+  margin-top: 100px;
 }
 
 // ************************* content
@@ -264,16 +266,18 @@ nav ul li a.active {
   height: 100%;
   position: fixed;
   right: 0;
+  margin-top: 123px;
 }
 
 .sidebar-container {
   background-color: $bg-primary;
   border-left: 3px solid $hl1-primary;
-  width: 30%;
+  width: 100%;
   max-width: 350px;
   height: 100%;
-  position: fixed;
+  position: sticky;
   right: 0;
+  top: 0;
   overflow: auto;
   z-index: 1;
 }
@@ -328,6 +332,10 @@ nav ul li a.active {
     text-align: left;
     width: 100%;
   }
+}
+
+.playing {
+  background-color: $bg-light;
 }
 
 img {
@@ -417,7 +425,7 @@ img {
 .playlist-button,
 .import-button {
   font-size: 2em;
-  background-color: $bg-primary;
+  background-color: transparent;
   color: $hl1-primary;
   border: none;
   :hover {
