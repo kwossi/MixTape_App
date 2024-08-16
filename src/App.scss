@@ -130,14 +130,14 @@ body {
 .nav-container {
   display: flex;
   justify-content: end;
-  width: 50%;
+  width: 60%;
 }
 nav {
-  width: 80%;
+  width: 90%;
 
   ul {
     display: flex;
-    padding: 0;
+    padding: 0 0.5em;
     margin: 0;
     justify-content: space-around;
     align-items: flex-end;
@@ -149,20 +149,17 @@ nav {
         text-decoration: none;
         transition: all 0.3s ease;
         margin-left: 3em;
+        border: 3px solid $hl1-primary;
+        border-bottom: none;
+        padding: 1em 1em 0 3em;
+        border-radius: 20px 20px 0 0;
       }
     }
   }
 }
 
 nav ul li a.active {
-  margin-top: 0.8em;
-}
-
-.link-box {
-  border: 3px solid $hl1-primary;
-  border-bottom: none;
-  padding: 1em 1em 0 1em;
-  border-radius: 20px 20px 0 0;
+  padding-top: 1.8em;
 }
 
 .logo {

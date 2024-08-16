@@ -7,19 +7,13 @@ const Navigation = () => {
       <nav>
         <ul>
           <li>
-            <div className="link-box">
-              <NavLink to="create">Create</NavLink>
-            </div>
+            <NavLink to="create">Create</NavLink>
           </li>
           <li>
-            <div className="link-box">
-              <NavLink to="listen">Listen</NavLink>
-            </div>
+            <NavLink to="listen">Listen</NavLink>
           </li>
           <li>
-            <div className="link-box">
-              <NavLink to="share">Share</NavLink>
-            </div>
+            <NavLink to="share">Share</NavLink>
           </li>
         </ul>
       </nav>
