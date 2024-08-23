@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TapeContext } from "../store/TapeContext";
+import { TapeContext } from "../../store/TapeContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import { FaAnglesRight, FaShareNodes } from "react-icons/fa6";

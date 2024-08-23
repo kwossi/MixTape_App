@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import ExportMixtape from "./ExportMixtape";
 import { useLocation } from "react-router-dom";
-import { TapeContext } from "../store/TapeContext";
+import { TapeContext } from "../../store/TapeContext";
 
 const Share = () => {
   const { mixtapeDispatch } = useContext(TapeContext);

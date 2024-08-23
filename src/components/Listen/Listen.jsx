@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Player from "./Player";
 import { useLocation } from "react-router-dom";
-import { TapeContext } from "../store/TapeContext";
+import { TapeContext } from "../../store/TapeContext";
 
 const Listen = () => {
   const { mixtapeDispatch } = useContext(TapeContext);
@@ -14,8 +14,6 @@ const Listen = () => {
 
   return (
     <div className="container">
-      {/* <h1>Listen</h1>
-      <p>Listen to your mixtape now.</p> */}
       <Player />
     </div>
   );

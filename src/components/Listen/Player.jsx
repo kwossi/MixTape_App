@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
-import { TapeContext } from "../store/TapeContext";
-import Example from "../assets/Example.json";
+import { TapeContext } from "../../store/TapeContext";
+import Example from "../../assets/Example.json";
 import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa6";
 
 const Player = () => {

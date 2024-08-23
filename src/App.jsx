@@ -1,10 +1,10 @@
 import "./App.scss";
-import Create from "./components/Create";
-import Home from "./components/Home";
-import Layout from "./components/Layout";
+import Create from "./components/Create/Create";
+import Home from "./components/Layout/Home";
+import Layout from "./components/Layout/Layout";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Listen from "./components/Listen";
-import Share from "./components/Share";
+import Listen from "./components/Listen/Listen";
+import Share from "./components/Share/Share";
 
 function App() {
   let location = useLocation();

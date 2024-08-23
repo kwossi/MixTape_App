@@ -1,4 +1,4 @@
-import ImportMixtape from "../components/ImportMixtape";
+import ImportMixtape from "../components/Create/ImportMixtape";
 
 export const mixtapeInitialState = {
   name: "",

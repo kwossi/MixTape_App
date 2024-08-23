@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { TapeContext } from "../store/TapeContext";
+import { TapeContext } from "../../store/TapeContext";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 const ImportMixtape = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CreateFirst from "./CreateFirst";
-import { TapeContext } from "../store/TapeContext";
+import { TapeContext } from "../../store/TapeContext";
 import YoutubeSearch from "./YoutubeSearch";
 import ImportMixtape from "./ImportMixtape";
 import { FaAnglesLeft } from "react-icons/fa6";
