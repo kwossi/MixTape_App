@@ -17,6 +17,11 @@ const YoutubeSearch = () => {
     setResults(data.items);
   };
 
+  const decodeHTML = (input) => {
+    return new DOMParser().parseFromString(input, "text/html").documentElement
+      .textContent;
+  };
+
   const addSong = (song) => {
     mixtapeDispatch({ type: "ADD", payload: { song } });
   };
@@ -36,9 +41,9 @@ const YoutubeSearch = () => {
           <div className="result" key={item.id.videoId}>
             <img
               src={item.snippet.thumbnails.default.url}
-              alt={item.snippet.title}
+              alt={decodeHTML(item.snippet.title)}
             />
-            <p>{item.snippet.title}</p>
+            <p>{decodeHTML(item.snippet.title)}</p>
             <button className="add-button" onClick={() => addSong(item)}>
               <MdAddBox />
             </button>
