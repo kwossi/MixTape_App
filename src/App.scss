@@ -1,5 +1,6 @@
 //  ****************************    COLORS
 // $bg-primary: #2c3e50;
+$bg-light-hover: hsl(209, 17%, 51%);
 $bg-light: #495e72;
 $bg-primary: rgba(44, 62, 80, 0.85);
 
@@ -14,9 +15,9 @@ $hl2-dark: #76a8a3;
 $image-layer: #4a7c7c;
 
 $border1: "1px solid $hl1⁻primary";
+$border-radius: 8px;
 
 //  ********************************    FONTS
-
 .righteous-regular {
   font-family: "Righteous", sans-serif;
   font-weight: 400;
@@ -333,6 +334,8 @@ nav ul li a.active {
 
 .playing {
   background-color: $bg-light;
+  padding: 0 1em;
+  border-radius: $border-radius;
 }
 
 img {
@@ -340,6 +343,7 @@ img {
   max-height: 100%;
   position: relative;
   top: 15%;
+  border-radius: $border-radius;
 }
 
 .currently-playing {
@@ -403,9 +407,11 @@ img {
   margin: 2px;
   border-radius: 8px;
   color: $hl1-primary;
-  :hover {
-    color: $hl1-light;
-  }
+}
+
+.control-button:hover {
+  color: $hl1-light;
+  background: $bg-light-hover;
 }
 
 .add-button {
