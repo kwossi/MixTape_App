@@ -163,6 +163,11 @@ nav ul li a.active {
   padding-top: 1.8em;
 }
 
+nav ul li a:hover {
+  background-color: $bg-light;
+  color: $hl1-primary;
+}
+
 .logo {
   color: $hl1-light;
   font-size: 5em;
@@ -229,8 +234,8 @@ nav ul li a.active {
 .import-container {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  justify-content: space-between;
+  gap: 1.2em;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 1.2em;
 }
@@ -439,8 +444,8 @@ img {
 .import-button {
   display: inline-block;
   color: $bg-primary;
-  flex-shrink: 1;
-  max-width: 50px;
+  //flex-shrink: 1;
+  max-width: fit-content;
 }
 
 .browse {
@@ -468,13 +473,13 @@ img {
 .toggle-button {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 130px;
 }
 
 .toggle-out-button {
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 10px;
   transform: translateX(-100%);
 }
 
