@@ -1,6 +1,6 @@
 # TapeTunes
 
-![Project Logo](../mixtape_app/src/assets/tape-logo.png) <!-- Optional: Add a logo if you have one -->
+![Project Logo](./src/assets/tape-logo.png)
 
 Welcome to the TapeTunes! This web application allows users to create, manage, and share music mixtapes. Users can also listen to playlists and explore music curated by others.
 
