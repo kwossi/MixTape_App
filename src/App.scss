@@ -470,6 +470,11 @@ img {
   border-radius: 8px 0 0 8px;
 }
 
+.toggle-button:hover,
+.toggle-out-button:hover {
+  background-color: $bg-light;
+}
+
 .toggle-button {
   position: absolute;
   right: 0;
