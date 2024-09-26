@@ -44,8 +44,9 @@ Welcome to the TapeTunes! This web application allows users to create, manage, a
 
    ```bash
     npm run dev
-    Open your browser and navigate to http://localhost:3000
    ```
+
+   > Note! This app needs a Google Data API key to work.
 
 ## Usage
 
