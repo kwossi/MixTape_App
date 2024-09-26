@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/App.scss";
 import Create from "./components/Create/Create";
 import Home from "./components/Layout/Home";
 import Layout from "./components/Layout/Layout";

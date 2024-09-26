@@ -1,0 +1,26 @@
+.view- {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}
+
+.view-create {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.view-listen {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}
+
+.view-share {
+  background-color: $image-layer;
+  background-image: url("../src/assets/bg-amps-books-tapes.jpg");
+  background-blend-mode: difference;
+}

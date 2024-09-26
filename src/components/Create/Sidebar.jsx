@@ -80,6 +80,9 @@ const Sidebar = () => {
               <MdDelete />
             </button>
           </div>
+          <div className="sidebar-help">
+            <p>Click on titles and artists to edit them.</p>
+          </div>
         </div>
       )}
     </div>

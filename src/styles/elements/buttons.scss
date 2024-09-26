@@ -1,0 +1,105 @@
+.control-button {
+  font-size: 2em;
+  background-color: $bg-light;
+  border: none;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 8px;
+  color: $hl1-primary;
+}
+
+.control-button:hover {
+  color: $hl1-light;
+  background: $bg-light-hover;
+}
+
+.add-button {
+  font-size: 2em;
+  background-color: $hl1-primary;
+  color: $bg-primary;
+  border: none;
+  :hover {
+    color: $bg-light;
+  }
+}
+
+.sidebar-button,
+.playlist-button,
+.import-button {
+  font-size: 2em;
+  background-color: transparent;
+  color: $hl1-primary;
+  border: none;
+  :hover {
+    color: $hl1-light;
+  }
+}
+
+.import-button {
+  display: inline-block;
+  color: $bg-primary;
+  //flex-shrink: 1;
+  max-width: fit-content;
+}
+
+.browse {
+  color: $bg-primary;
+  background-color: $hl1-primary;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.playlist-button {
+  margin-right: 1em;
+}
+
+.toggle-button,
+.toggle-out-button {
+  font-size: 2em;
+  background-color: $bg-primary;
+  color: $hl1-primary;
+  border: 3px solid $hl1-primary;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.toggle-button:hover,
+.toggle-out-button:hover {
+  background-color: $bg-light;
+}
+
+.toggle-button {
+  position: absolute;
+  right: 0;
+  top: 130px;
+}
+
+.toggle-out-button {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  transform: translateX(-100%);
+}
+
+.download-button,
+.import-button {
+  font-size: 5em;
+  background-color: $bg-primary;
+  color: $hl1-primary;
+  border: none;
+  :hover {
+    color: $hl1-light;
+  }
+}
+
+.continue-button {
+  color: $bg-primary;
+  background-color: $hl1-primary;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  :hover {
+    background-color: $hl1-light;
+  }
+}

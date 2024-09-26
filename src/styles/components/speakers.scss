@@ -1,0 +1,33 @@
+.speaker {
+  border: 2px solid $hl1-primary;
+  border-radius: 8px;
+  padding: 1.5em;
+  overflow: hidden;
+}
+
+.speaker-inside {
+  height: 8em;
+  min-width: 8em;
+  background-color: $hl1-light;
+  border-radius: 50%;
+  position: relative;
+}
+
+.speaker-inside-active {
+  height: 8em;
+  min-width: 8em;
+  background-color: $hl1-light;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 0.8s infinite ease-in;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.45);
+  }
+}

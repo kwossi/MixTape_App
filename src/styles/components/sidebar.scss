@@ -1,0 +1,59 @@
+.sidebar-wrapper {
+  width: 30%;
+  max-width: 350px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  margin-top: 123px;
+}
+
+.sidebar-container {
+  background-color: $bg-primary;
+  border-left: 3px solid $hl1-primary;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  position: sticky;
+  right: 0;
+  top: 0;
+  overflow: auto;
+  z-index: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  .sidebar-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 5px;
+  }
+  input {
+    background-color: $bg-primary;
+    border: none;
+    font-size: 1em;
+    font-family: "Righteous";
+    color: $hl2-primary;
+  }
+  img {
+    max-height: 4em;
+  }
+}
+
+.sidebar-footer {
+  width: 50%;
+  margin: 2em auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sidebar-help {
+  background-color: #ffa37e;
+  width: 90%;
+  margin: auto;
+  border: $border1;
+  border-radius: $border-radius;
+  p {
+    color: $bg-primary;
+  }
+}
