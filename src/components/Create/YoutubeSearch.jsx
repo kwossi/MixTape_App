@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { TapeContext } from "../../store/TapeContext";
 import { MdAddBox } from "react-icons/md";
+import { decodeHTML } from "../../helpers";
 
 const YoutubeSearch = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
+  const { mixtapeDispatch } = useContext(TapeContext);
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const searchYouTube = async (e) => {
@@ -16,11 +17,6 @@ const YoutubeSearch = () => {
     );
     const data = await response.json();
     setResults(data.items);
-  };
-
-  const decodeHTML = (input) => {
-    return new DOMParser().parseFromString(input, "text/html").documentElement
-      .textContent;
   };
 
   const addSong = (song) => {

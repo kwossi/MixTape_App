@@ -5,6 +5,7 @@ import { FaPlay } from "react-icons/fa";
 import { FaAnglesRight, FaShareNodes } from "react-icons/fa6";
 import { TiDelete } from "react-icons/ti";
 import { MdDelete } from "react-icons/md";
+import { decodeHTML } from "../../helpers.js";
 
 const Sidebar = () => {
   const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
@@ -45,12 +46,12 @@ const Sidebar = () => {
                 <div className="sidebar-inputs">
                   <input
                     type="text"
-                    value={song.title}
+                    value={decodeHTML(song.title)}
                     onChange={(e) => handleEdit(index, "title", e.target.value)}
                   />
                   <input
                     type="text"
-                    value={song.artist}
+                    value={decodeHTML(song.artist)}
                     onChange={(e) =>
                       handleEdit(index, "artist", e.target.value)
                     }

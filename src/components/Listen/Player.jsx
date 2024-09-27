@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import { TapeContext } from "../../store/TapeContext";
 import Example from "../../assets/Example.json";
 import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa6";
+import { decodeHTML } from "../../helpers";
 
 const Player = () => {
   const [playlist, setPlaylist] = useState(Example);
@@ -64,8 +65,12 @@ const Player = () => {
           )}
         </div>
         <div className="noneyet">
-          <p className="title">{playlist.playlist[currentSong]?.title}</p>
-          <p className="artist">{playlist.playlist[currentSong]?.artist}</p>
+          <p className="title">
+            {decodeHTML(playlist.playlist[currentSong]?.title)}
+          </p>
+          <p className="artist">
+            {decodeHTML(playlist.playlist[currentSong]?.artist)}
+          </p>
         </div>
         <div className="speaker">
           {isPlaying ? (
@@ -106,8 +111,8 @@ const Player = () => {
                 <FaPlay />
               </button>
               <div className="playlist-item-text">
-                <p className="title">{song.title}</p>
-                <p className="artist">{song.artist}</p>
+                <p className="title">{decodeHTML(song.title)}</p>
+                <p className="artist">{decodeHTML(song.artist)}</p>
               </div>
               <div className="playlist-thumbnail">
                 <img src={song.thumbnail} alt="" />
