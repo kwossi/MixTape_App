@@ -8,7 +8,8 @@ const YoutubeSearch = () => {
   const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const searchYouTube = async () => {
+  const searchYouTube = async (e) => {
+    e.preventDefault();
     if (!query) return;
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&key=${apiKey}`
@@ -29,13 +30,15 @@ const YoutubeSearch = () => {
   return (
     <div className="search-container">
       <h2>Search YouTube for songs... </h2>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search for songs"
-      />
-      <button onClick={searchYouTube}>Search</button>
+      <form onSubmit={searchYouTube}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search for songs"
+        />
+        <button onClick={searchYouTube}>Search</button>
+      </form>
       <div id="results-container">
         {results.map((item) => (
           <div className="result" key={item.id.videoId}>

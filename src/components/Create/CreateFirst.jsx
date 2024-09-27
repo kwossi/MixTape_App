@@ -20,23 +20,25 @@ const CreateFirst = () => {
   };
   return (
     <div className="first-wrapper">
-      <input
-        type="text"
-        name="name"
-        placeholder="Playlist Name"
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="text"
-        name="creator"
-        placeholder="Creator"
-        onChange={handleChange}
-        required
-      />
-      <button className="continue-button" onClick={handleNext}>
-        Continue
-      </button>
+      <form onSubmit={handleNext}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Playlist Name"
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="creator"
+          placeholder="Creator"
+          onChange={handleChange}
+          required
+        />
+        <button type="submit" className="continue-button" onClick={handleNext}>
+          Continue
+        </button>
+      </form>
     </div>
   );
 };
