@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 import { TapeContext } from "../../store/TapeContext";
 import Example from "../../assets/Example.json";
 import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa6";
-import { decodeHTML } from "../../helpers";
+import { decodeHTML } from "../../helpers.js";
 
 const Player = () => {
   const [playlist, setPlaylist] = useState(Example);
