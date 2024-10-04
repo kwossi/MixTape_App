@@ -1,19 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { TapeContext } from "../../store/TapeContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import { FaAnglesRight, FaShareNodes } from "react-icons/fa6";
 import { TiDelete } from "react-icons/ti";
-import { MdDelete } from "react-icons/md";
+import { MdDelete, MdEdit } from "react-icons/md";
 import { decodeHTML } from "../../helpers.js";
 
 const Sidebar = () => {
   const { mixtapeState, mixtapeDispatch } = useContext(TapeContext);
+  const inputRefs = useRef([]);
 
   const handleEdit = (index, field, value) => {
     mixtapeDispatch({ type: "EDIT", payload: { index, field, value } });
   };
   const navigate = useNavigate();
+
+  const handleFocus = (index) => {
+    if (inputRefs.current[index]) {
+      inputRefs.current[index].focus();
+    }
+  };
 
   return (
     <div className="sidebar-wrapper">
@@ -35,20 +42,31 @@ const Sidebar = () => {
           ) : (
             mixtapeState.playlist.map((song, index) => (
               <div className="sidebar-item" key={index}>
-                <button
-                  className="sidebar-button"
-                  name="artist"
-                  title="delete song"
-                  onClick={() =>
-                    mixtapeDispatch({ type: "DEL", payload: { song, index } })
-                  }
-                >
-                  <TiDelete />
-                </button>
+                <div className="button-wrapper">
+                  <button
+                    className="sidebar-button"
+                    name="artist"
+                    title="edit song"
+                    onClick={() => handleFocus(index)}
+                  >
+                    <MdEdit />
+                  </button>
+                  <button
+                    className="sidebar-button"
+                    name="artist"
+                    title="delete song"
+                    onClick={() =>
+                      mixtapeDispatch({ type: "DEL", payload: { song, index } })
+                    }
+                  >
+                    <TiDelete />
+                  </button>
+                </div>
                 <div className="sidebar-inputs">
                   <input
                     type="text"
                     value={decodeHTML(song.title)}
+                    ref={(el) => (inputRefs.current[index] = el)}
                     onChange={(e) => handleEdit(index, "title", e.target.value)}
                   />
                   <input
@@ -85,9 +103,6 @@ const Sidebar = () => {
             >
               <MdDelete />
             </button>
-          </div>
-          <div className="sidebar-help">
-            <p>Click on titles and artists to edit them.</p>
           </div>
         </div>
       )}
