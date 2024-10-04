@@ -21,6 +21,7 @@ const Sidebar = () => {
         <button
           className="toggle-out-button"
           onClick={() => mixtapeDispatch({ type: "TOGGLE" })}
+          title="toggle sidebar"
         >
           <FaAnglesRight />
         </button>
@@ -37,6 +38,7 @@ const Sidebar = () => {
                 <button
                   className="sidebar-button"
                   name="artist"
+                  title="delete song"
                   onClick={() =>
                     mixtapeDispatch({ type: "DEL", payload: { song, index } })
                   }
@@ -64,18 +66,21 @@ const Sidebar = () => {
           <div className="sidebar-footer">
             <button
               className="sidebar-button"
+              title="listen"
               onClick={() => navigate("/listen")}
             >
               <FaPlay />
             </button>
             <button
               className="sidebar-button"
+              title="share"
               onClick={() => navigate("/share")}
             >
               <FaShareNodes />
             </button>
             <button
               className="sidebar-button"
+              title="delete all"
               onClick={() => mixtapeDispatch({ type: "DELALL" })}
             >
               <MdDelete />

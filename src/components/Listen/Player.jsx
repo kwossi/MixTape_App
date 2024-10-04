@@ -81,16 +81,24 @@ const Player = () => {
         </div>
       </div>
       <div className="controls">
-        <button className="control-button" onClick={handlePlay}>
+        <button className="control-button" onClick={handlePlay} title="play">
           <FaPlay />
         </button>
-        <button className="control-button" onClick={handlePause}>
+        <button className="control-button" onClick={handlePause} title="pause">
           <FaPause />
         </button>
-        <button className="control-button" onClick={handlePrevious}>
+        <button
+          className="control-button"
+          onClick={handlePrevious}
+          title="previous song"
+        >
           <FaBackward />
         </button>
-        <button className="control-button" onClick={handleNext}>
+        <button
+          className="control-button"
+          onClick={handleNext}
+          title="next song"
+        >
           <FaForward />
         </button>
       </div>
@@ -106,6 +114,7 @@ const Player = () => {
             >
               <button
                 className="playlist-button"
+                title="play"
                 onClick={() => jumpPlay(index)}
               >
                 <FaPlay />

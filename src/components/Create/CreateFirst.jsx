@@ -35,7 +35,12 @@ const CreateFirst = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit" className="continue-button" onClick={handleNext}>
+        <button
+          type="submit"
+          className="continue-button"
+          onClick={handleNext}
+          title="Create mixtape"
+        >
           Continue
         </button>
       </form>

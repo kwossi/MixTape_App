@@ -40,7 +40,11 @@ const ImportMixtape = () => {
         accept=".json"
         onChange={changeFile}
       />
-      <button className="import-button" onClick={handleImport}>
+      <button
+        className="import-button"
+        onClick={handleImport}
+        title="Upload mixtape"
+      >
         <FaCloudUploadAlt />
       </button>
     </div>

@@ -20,7 +20,11 @@ const ExportMixtape = () => {
 
   return (
     <div>
-      <button className="download-button" onClick={exportMixtape}>
+      <button
+        className="download-button"
+        onClick={exportMixtape}
+        title="download"
+      >
         <FaCloudDownloadAlt />
       </button>
       {mixtapeState.name ? (
