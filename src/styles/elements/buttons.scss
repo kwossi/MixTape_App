@@ -39,6 +39,14 @@ button {
   }
 }
 
+.button-wrapper,
+.sidebar-button {
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .import-button {
   display: inline-block;
   color: $bg-primary;
